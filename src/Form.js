@@ -3,21 +3,15 @@ import React from 'react';
 import './App.css';
 
 
-
-
-
 class Form extends React.Component{
     render(){
         return(
             <form id="appointmentFormTag" method="Post">
-
                     <h1>Schedule appointment</h1>
                <fieldset>
-                   <legend>Contact information</legend>
+                   <legend>Patient information</legend>
                     {/* first and last name input */}
-                    <label for="first_name">First name:</label>
-                    <input type="text" required/>
-                    <label for="last_name">Last name:</label>
+                    <label for="name">Name:</label>
                     <input type="text" required/>
                     {/* gender input */}
                     <label for="gender">Gender:</label>
@@ -26,29 +20,19 @@ class Form extends React.Component{
                         <option value="F">Female</option>
                         <option value="O">Other</option>
                     </select>
-                    {/* phone number input */}
-                    <label for="phone">Phone number:</label>
-                    <input type="tel" required/>
-                    <label for="email">e-mail:</label>
-                    <input type="email"/>
-                    <label for="street_address" required>Street address:</label>
+                    <label for="age" required>Age:</label>
                     <input type="text"/>
-                    <label for="city" required>City:</label>
-                    <input type="text"/>
-                    <label for="state/province">State/Province:</label>
+                    <label for="patientId">Patient ID:</label>
                     <input type="text"required/>
-                    <label for="postal_code">Postal/Zip code:</label>
-                    <input type="text"/>
+            
                 </fieldset>
                 <fieldset>
                     <legend>Appointment information:</legend>
-                    <label for="date">Today's date:</label>
-                    <input type="date"/>
                     <label for="date">Appointment date:</label>
                     <input type="date"/>
-                    <h2>Date</h2>
-                <input type="date"/>
-                    <input type="text"/>
+                    <label for="time">Appointment Time:</label>
+                    <input type="time"/>
+    
                 <label>Doctor ID</label>
                 <select>
                     <option value="1">Dr.Hickman</option>

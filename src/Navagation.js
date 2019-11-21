@@ -4,8 +4,6 @@ import './App.css';
 
 
 
-
-
 class Navagation extends React.Component{
     render(){
         return(
