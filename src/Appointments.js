@@ -1,19 +1,16 @@
 import React from 'react';
 // import axios from 'axios';
 import './App.css';
-import Form from './Form'
 
 
 
 
 
-class Schedule extends React.Component{
+class Appointments extends React.Component{
     render(){
         return(
-            <div id="ScheduleDiv">
+            <div id="AppointmentsDiv">
                 <h1>hi!</h1>
-                <Form/>
-
             </div>
         )
     }
@@ -23,4 +20,4 @@ class Schedule extends React.Component{
 
 
 
-export default Schedule;
+export default Appointments;

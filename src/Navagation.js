@@ -1,7 +1,15 @@
 import React from 'react';
 // import axios from 'axios';
+import Home from './Home.js';
+import Doctors from './Doctors';
+import Schedule from './Schedule';
+import Appointments from './Appointments';
 import './App.css';
-
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+  } from 'react-router-dom';
 
 
 
@@ -9,14 +17,22 @@ import './App.css';
 class Navagation extends React.Component{
     render(){
         return(
+        <Router>
             <div id="navagationDiv">
                 <ul id="navagationUl">
-                    <li className="navagationLis">home</li>
-                    <li className="navagationLis">doctors</li>
-                    <li className="navagationLis">schedule</li>
-                    <li className="navagationLis">appointments</li>
+                    <li className="navagationLis"><Link to="/">Home</Link></li>
+                    <li className="navagationLis"><Link to="/doctors">Doctors</Link></li>
+                    <li className="navagationLis"><Link to="/schedule">Shedule</Link></li>
+                    <li className="navagationLis"><Link to="/appointments">Appointments</Link></li>
                 </ul>
-            </div>
+                <div>
+                    <Route exact path="/" component={() => <Home/>}/>
+                    <Route path="/doctors" component={() => < Doctors/> }/>
+                    <Route path="/schedule" component={() => < Schedule/> }/>
+                    <Route path="/appointments" component={() => < Appointments/> }/>
+                </div>
+            </div>   
+        </Router>
         )
     }
 }
@@ -26,3 +42,4 @@ class Navagation extends React.Component{
 
 
 export default Navagation;
+

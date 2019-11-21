@@ -1,8 +1,12 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-// import Navagation from './Navagation';
+import Navagation from './Navagation';
 import Form from './Form'
+import Doctors from './Doctors';
+import Schedule from './Schedule';
+import Appointments from './Appointments';
+import Home from './Home'
 // const databaseUrl = process.env.HEROKU_DB_URL || 'http://localhost:3000'
 const databaseUrl = 'https://project3-backend-test.herokuapp.com'
 
@@ -32,8 +36,7 @@ class App extends React.Component {
     console.log("Rendered")
     return (
       <div className="App" >
-        {/* <Navagation /> */}
-        <Form />
+        <Navagation />
       </div>
     );
   }

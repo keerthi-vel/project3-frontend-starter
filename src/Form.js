@@ -46,9 +46,6 @@ class Form extends React.Component{
                     <input type="date"/>
                     <label for="date">Appointment date:</label>
                     <input type="date"/>
-                    <h2>Date</h2>
-                <input type="date"/>
-                    <input type="text"/>
                 <label>Doctor ID</label>
                 <select>
                     <option value="1">Dr.Hickman</option>
