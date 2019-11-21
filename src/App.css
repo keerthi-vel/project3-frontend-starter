@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  display: flex;
 }
 
 .App-logo {
@@ -19,4 +19,17 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+#navagationUl{
+  height: 700px;
+  border: solid black 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+#appointmentFormTag{
+  border: solid black 2px;
 }

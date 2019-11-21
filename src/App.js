@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
+import Navagation from './Navagation';
+import Form from './Form'
 // const databaseUrl = process.env.HEROKU_DB_URL || 'http://localhost:3000'
 const databaseUrl = 'https://project3-backend-test.herokuapp.com'
 
@@ -30,9 +32,8 @@ class App extends React.Component {
     console.log("Rendered")
     return (
       <div className="App" >
-        <header className="App-header">
-          <h1>Project 3 Starter. Let's git it!</h1>
-        </header>
+        {/* <Navagation /> */}
+        <Form />
       </div>
     );
   }
