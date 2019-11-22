@@ -30,6 +30,13 @@ Medical app is a full stack  web application created to allow users to create do
 
 
 
+## Wire frames:
+
+<img src="project3-frontend-starter/src/images/wireframes/Screen Shot 2019-11-22 at 1.38.02 AM.png"/>
+<img src="project3-frontend-starter/src/images/wireframes/Screen Shot 2019-11-22 at 9.10.54 AM.png"/>
+<img src="project3-frontend-starter/src/images/wireframes/Screen Shot 2019-11-22 at 9.17.35 AM.png"/>
+<img src="project3-frontend-starter/src/images/wireframes/Screen Shot 2019-11-22 at 11.21.45 AM.png"/>
+<img src="project3-frontend-starter/src/images/wireframes/Screen Shot 2019-11-22 at 12.38.56 AM.png"/>
 
 
 
