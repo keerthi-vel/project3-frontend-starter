@@ -60,12 +60,12 @@ class Doctors extends React.Component{
     createDoctor = e => {
         e.preventDefault();
         axios({
-          url: `${doctorUrl}/pets`,
+          url: `${doctorUrl}/doctors`,
           method: "post",
-          data: { newPet: this.state.newPet }
+          data: { newDoctor: this.state.newDoctor }
         }).then(response => {
           this.setState(prevState => ({
-            pets: [...prevState.pets, response.data.pet]
+            doctors: [...prevState.doctors, response.data.doctor]
           }));
         });
       };
