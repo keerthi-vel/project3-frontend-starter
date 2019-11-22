@@ -5,7 +5,6 @@ import './App.css';
 
 
 
-
 class Appointments extends React.Component{
     render(){
         return(

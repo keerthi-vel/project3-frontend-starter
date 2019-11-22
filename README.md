@@ -1,17 +1,30 @@
+# Medical App
 
 
+##### Created by:
 
 
+###### April H.
+###### Keerthi ?.
+###### Matthew C.
+###### Sonny F.
+
+## About:
+
+Medical app is a full stack  web application created to allow users to create doctors appointments easily and for managing these doctors appointments.
+
+#### Tech used:
 
 
-
-
-
-
-
-
-
-
+- react.js
+- axios
+- Jose
+- Google fonts
+- Material.io
+- htmlcolorcodes.com
+- momentjs.com
+- npm
+- node.js
 
 
 
