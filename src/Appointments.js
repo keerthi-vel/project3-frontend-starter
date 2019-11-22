@@ -5,7 +5,6 @@ import './App.css';
 //const appointmentUrl = 'http://localhost:3000/api';
 
 
-
 class Appointments extends React.Component{
     render(){
         return(

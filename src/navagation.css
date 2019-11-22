@@ -1,0 +1,65 @@
+/* Universal styles */
+*{}
+
+/* ID styles */
+#navagationDiv{
+    display: flex;
+    background-color: #CC4C4C;
+    width: 300px;
+    height: 900px;
+    border-top: solid white 9px;
+}
+
+#navagationUl{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    color: white;
+}
+
+#headerDiv{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #C1C1C1;
+    color: white;
+    font-size: 30px;
+    height: 70px;
+}
+
+/* This selects the text under the icons */
+#navagationUl a{
+    color: white;
+    text-decoration: none;
+}
+
+/* Class styles */
+.material-icons{
+    font-size: 45px;
+    color: white;
+}
+
+.navagationLinkDiv{
+    display: flex;
+    flex-direction: row;
+}
+
+.navagationLis a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+/* Tag styles */
+
+body{
+    font-family: 'Oswald', sans-serif;
+    background-color: #888888;
+    /* display: flex;
+    flex-direction: row; */
+}
+
+
+

@@ -1,6 +1,12 @@
 import React from 'react';
 // import axios from 'axios';
+<<<<<<< HEAD
 import './App.css';
+=======
+// import './App.css';
+import './form.css'
+
+>>>>>>> upstream/master
 
 
 class Form extends React.Component{

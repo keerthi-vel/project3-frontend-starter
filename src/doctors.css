@@ -1,0 +1,31 @@
+/* Universal styles */
+*{}
+
+/* ID styles */
+#doctorssDiv{
+    display: flex;
+    
+    border: solid black 2px;
+    width: 900px;
+    height: 700px;
+}
+
+#doctorssDiv ul{
+    display: flex;
+    flex-direction: column;
+    border: solid black 2px;
+    width: 900px;
+    height: 700px;
+}
+
+/* Class styles */
+.doctorsCArdDiv{
+    border: solid black 1px;
+}
+
+
+/* Tag styles */
+
+
+
+

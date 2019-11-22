@@ -1,0 +1,22 @@
+/*  universal styles*/
+
+
+/* ID styles */
+
+#appointmentFormTag{
+    margin: 0 auto;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-direction: column;
+    border: solid yellow 4px;
+    height: 700px;
+    width: 600px;
+    background-color: #CC4C4C;
+    color: white;
+}
+
+/* Class styles */
+
+
+/* Tag styles */
