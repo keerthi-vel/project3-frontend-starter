@@ -1,72 +1,74 @@
 import React from 'react';
 import axios from 'axios';
-// import './App.css';
-const patientUrl = 'http://localhost:3000/api';
-class Patients extends React.Component{
+import './App.css';
+const appointmentUrl = 'http://localhost:3000/api';
+class Appointments extends React.Component{
     state = {
-        patients: [],
-        newPatient: {
-            name: "",
-            age: "",
-            gender: null,
-            patientId: null
+        appointments: [],
+        newAppointment: {
+            date: '',
+            time: '',
+            patientId: null,
+            doctorId: null
         }
     }
     componentDidMount(){
-        this.getPatients();
+        this.getAppointments();
     }
-    getPatients = () => {
+    getAppointments = () => {
         axios({
-          url: `${patientUrl}/patients`,
-          method: "get"
+            url: `${appointmentUrl}/appointments`,
+            method: "get"
         }).then(response => {
-          this.setState({
-            patients: response.data.patients
-          });
+            console.log('response')
+            console.log(response)
+            this.setState({
+            appointments: response.data.appointment
+            //the name what we called in the API (backend-jason object)
+            });
         console.log(response);
         });
-      };
-      createPatient = e => {
-        e.preventDefault();
-        axios({
-          url: `${patientUrl}/pets`,
-          method: "post",
-          data: { newPet: this.state.newPet }
-        }).then(response => {
-          this.setState(prevState => ({
-            pets: [...prevState.pets, response.data.pet]
-          }));
+    };
+    createAppointment = e => {
+    e.preventDefault();
+    axios({
+        url: `${appointmentUrl}/appointments`,
+        method: "post",
+        data: { newAppointment: this.state.newAppointment }
+    }).then(response => {
+        this.setState(prevState => ({
+            appointments: [...prevState.appointment, response.data.appointment]
+        }));
         });
-      };
-      deletePatient = e => {
-        axios({
-          url: `${patientUrl}/patients/${e.target.id}`,
-          method: "delete"
-        }).then(response => {
-          this.setState({ patients: response.data.patients });
-        });
-      };
-      render() {
-        console.log(this.state);
-        const patientEls = this.state.patients.map(patient => {
-          return (
-            <li key={patient.id}>
-              {patient.name} -- {patient.age} -- {patient.gender} -- {patient.patientId}
-              <button id={patient.id} onClick={this.deletePatient}>
-                Delete Patient
-              </button>
-              <button id={patient.id} onClick={this.createPatient}>
-                Update Patient
-              </button>
-            </li>
-          );
-        });
-        return(
-            <div id="PatientsDiv">
-               {/* <ul>{patientEls}</ul> */}
-            </div>
-        )
-    }
+    };
+    deleteAppointment = e => {
+    axios({
+        url: `${appointmentUrl}/appointments/${e.target.id}`,
+        method: "delete"
+    }).then(response => {
+        this.setState({ appointments: response.data.appointments });
+    });
+    };
+    render() {
+    // console.log(this.state.appointments);
+    const appointmentEls = this.state.appointments.map(appointment => {
+      return(
+        <li key={appointment.id}>
+          {appointment.time} --{appointment.date} --{appointment.patientId} --{appointment.doctorId}
+          <button id={appointment.id} onClick={this.deleteAppointment}>
+            Delete Appointment
+          </button>
+          {/* <button id={appointment.id} onClick={this.createAppointment}>
+            Create Appointment
+          </button> */}
+        </li>
+      );
+    });
+    return(
+        <div id="AppointmentDiv">
+            <button>createAppointment</button>
+            <ul>{appointmentEls}</ul>
+        </div>
+    )}
 }
-export default Patients;
-
+export default Appointments;
