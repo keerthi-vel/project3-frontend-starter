@@ -32,7 +32,7 @@ Medical app is a full stack  web application created to allow users to create do
 
 ## Wire frames:
 
-<img src="project3-frontend-starter/src/images/wireframes/appointments-wf.jpg"></img>
+<img src="/Users/sonnyfishback/SEI/portfolio/project3-frontend-starter/src/images/wireframes/appointments-wf.jpg"></img>
 <img src=""></img>
 <img src=""></img>
 <img src=""></img>
