@@ -54,22 +54,25 @@ class Appointments extends React.Component{
     });
     };
     render() {
-    console.log(this.state.appointments);
+    // console.log(this.state.appointments);
+    
+    
     const appointmentEls = this.state.appointments.map(appointment => {
-      return (
+      return(
         <li key={appointment.id}>
           {appointment.time} --{appointment.date} --{appointment.patientId} --{appointment.doctorId}
           <button id={appointment.id} onClick={this.deleteAppointment}>
             Delete Appointment
           </button>
-          <button id={appointment.id} onClick={this.createAppointment}>
-            Update Appointment
-          </button>
+          {/* <button id={appointment.id} onClick={this.createAppointment}>
+            Create Appointment
+          </button> */}
         </li>
       );
     });
     return(
         <div id="AppointmentDiv">
+            <button>createAppointment</button>
             <ul>{appointmentEls}</ul>
         </div>
     )}

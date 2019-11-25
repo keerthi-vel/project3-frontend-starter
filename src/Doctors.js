@@ -88,7 +88,7 @@ class Doctors extends React.Component{
                         Delete doctor
                     </button>
                     <button id={doctor.id} onClick={this.createdoctor}>
-                        Update doctor
+                        Create doctor
                     </button>
                     </li>
               </div>

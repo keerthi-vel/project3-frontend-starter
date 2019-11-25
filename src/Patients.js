@@ -56,7 +56,7 @@ class Patients extends React.Component{
                 Delete Patient
               </button>
               <button id={patient.id} onClick={this.createPatient}>
-                Update Patient
+                Create Patient
               </button>
             </li>
           );
