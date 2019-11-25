@@ -13,8 +13,8 @@ class Doctors extends React.Component{
         doctors: [],
         newDoctor: {
             name: "",
-            address: "",
-            phone: null,
+            age: null,
+            gender: "",
             doctorId: null
         }
     }
@@ -78,12 +78,12 @@ class Doctors extends React.Component{
     createDoctor = e => {
         e.preventDefault();
         axios({
-          url: `${doctorUrl}/pets`,
+          url: `${doctorUrl}/doctors`,
           method: "post",
-          data: { newPet: this.state.newPet }
+          data: { doctor: this.state.doctors }
         }).then(response => {
           this.setState(prevState => ({
-            pets: [...prevState.pets, response.data.pet]
+             doctors: response.data.doctors
           }));
         });
       };
@@ -99,17 +99,17 @@ class Doctors extends React.Component{
         console.log(this.state);
         const doctorEls = this.state.doctors.map(doctor => {
           return (
-              <div className="doctorsCArdDiv">
-                    <li key={doctor.id}>
-                    {doctor.name} -- {doctor.age} -- {doctor.gender} -- {doctor.doctorId}
-                    <button id={doctor.id} onClick={this.deletedoctor}>
-                        Delete doctor
-                    </button>
-                    <button id={doctor.id} onClick={this.createdoctor}>
-                        Update doctor
-                    </button>
-                    </li>
-              </div>
+              
+                  <div key={doctor.id} className="doctorsCArdDiv">
+                      {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB-ckJyRnhYpswKfyGR1aLAPiLFx3eh5yUk_P1fh7dpeZ8SHBW&s" /> */}
+                      <p>Dr.{doctor.name}</p>
+                      <p>Address: {doctor.address}</p>
+                      <p>Phone: {doctor.phone}</p>
+                      <p>Id: {doctor.id}</p>
+                      <button><i class="material-icons md-dark">edit</i></button>
+                      <button onClick={this.deleteDoctor}><i class="material-icons md-dark">delete</i></button>
+                  </div>
+             
           );
         });
         return(
@@ -119,7 +119,6 @@ class Doctors extends React.Component{
         )
     }
 }
-
 
 
 

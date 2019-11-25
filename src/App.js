@@ -6,7 +6,8 @@ import Form from './Form'
 import Doctors from './Doctors';
 import Schedule from './Schedule';
 import Appointments from './Appointments';
-import Home from './Home'
+import Home from './Home';
+import Header from './Header';
 // const databaseUrl = process.env.HEROKU_DB_URL || 'http://localhost:3000'
 const databaseUrl = 'https://project3-backend-test.herokuapp.com'
 
@@ -36,7 +37,17 @@ class App extends React.Component {
     console.log("Rendered")
     return (
       <div className="App" >
-        <Navagation />
+        <header>
+            <Header/>
+        </header>
+        <main>
+          <aside>
+            <Navagation />
+          </aside>
+        </main>
+        <footer>
+
+        </footer>
       </div>
     );
   }

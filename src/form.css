@@ -12,7 +12,7 @@
     border: solid white 2px;
     border-radius: 5px;
     /* height: 900px; */
-    /* width: 600px; */
+    width: 800px;
     background-color: #CC4C4C;
     color: white;
 }
@@ -48,4 +48,8 @@ fieldset{
     display: flex;
     flex-wrap: wrap;
     border: solid white 1px;
+}
+
+body{
+    display: flex;
 }

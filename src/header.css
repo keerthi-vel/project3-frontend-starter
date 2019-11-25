@@ -1,0 +1,17 @@
+header{
+    display: flex;
+    background-color: #C1C1C1;
+    
+}
+
+
+#headerDiv{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    color: white;
+    font-size: 30px;
+    height: 70px;
+    width: 500px;
+}
