@@ -1,0 +1,13 @@
+.patientsCardDiv{
+    background-color: #CC4C4C;
+    color: white;
+    border: solid white 1px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+#patientDiv{
+    display: flex;
+    flex-direction: row;
+}

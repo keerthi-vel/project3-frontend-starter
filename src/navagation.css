@@ -1,60 +1,38 @@
-/* Universal styles */
-*{}
-
-/* ID styles */
-#bodyDiv{
-    display: flex;
-    flex-direction: column;
-}
-
-#navagationDiv{
-    display: flex;
-    background-color: #CC4C4C;
-    width: 100%;
-    height: 900px;
-    border-top: solid white 9px;
-}
-
-#navagationUl{
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    color: white;
-}
-
-
-/* This selects the text under the icons */
-#navagationUl a{
-    color: white;
-    text-decoration: none;
-}
-
-/* Class styles */
-.material-icons{
-    font-size: 45px;
-    color: white;
-}
-
 .navagationLinkDiv{
     display: flex;
     flex-direction: row;
 }
 
-.navagationLis a{
+.navagationLis{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space space-around;
+    list-style-type: none;
+}
+
+a{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    text-decoration: none;
+    color: white;
 }
 
-
-/* Tag styles */
-
-body{
-    font-family: 'Oswald', sans-serif;
-    background-color: #888888;
-    display: flex;
-    flex-direction: row;
+a:active{
+    background-color: white;
+    color: #CC4C4C;
 }
 
+.material-icons{
+    font-size: 45px;
+    color: white;
+}
 
+.material-icons:active{
+    color: #CC4C4C;
+}
 
+.navagationLinkDiv{
+    width:100%;
+}

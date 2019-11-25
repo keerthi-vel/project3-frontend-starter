@@ -18,102 +18,70 @@ class Doctors extends React.Component{
             doctorId: null
         }
     }
-    componentDidMount(){
-        this.getDoctors();
+    componentDidMount() {
+      this.getDoctors();
     }
     getDoctors = () => {
-        axios({
+      axios({
         url: `${doctorUrl}/doctors`,
-        method: 'get'
-        })
-        .then( response => {
-            console.log(response);
-
-            console.log("Doctors array:",response.data.doctors);
-            var doctorsList = response.data.doctors;
-
-            console.log("Address:",response.data.doctors[1].address);
-            var doctorAddress = response.data.doctors[1].address;
-
-            console.log("Doctor Id:", response.data.doctors[1].doctorId);
-            var doctorID = response.data.doctors[1].doctorId;
-
-            console.log("Name:", response.data.doctors[1].name);
-            var doctorName = response.data.doctors[1].name;
-
-            console.log("Phone", response.data.doctors[1].phone);
-            var doctorPhone = response.data.doctors[1].phone;
-
-            this.setState({
-                doctors: response.data.doctors
-            });
-        })
-        .catch((error)=> {
-            // if (error.response) {
-            //   // The request was made and the server responded with a status code
-            //   // that falls out of the range of 2xx
-            //   console.log("first case",error.response.data);
-            //   console.log("second case",error.response.status);
-            //   console.log("third case",error.response.headers);
-            // } else if ("fourth case",error.request) {
-            //   // The request was made but no response was received
-            //   // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-            //   // http.ClientRequest in node.js
-            //   console.log("fith case",error.request);
-            // } else {
-            //   // Something happened in setting up the request that triggered an Error
-              console.log('Error', error.message);
-            // }
+        method: "get"
+      }).then(response => {
+        this.setState({
+          doctors: response.data.doctors
         });
+        console.log(response);
+      });
     };
-    // createDoctor = e => {
-    //     e.preventDefault();
-    //     axios({
-    //         url: `${doctorUrl}/doctors/${e.target.id}`,
-    //         method: "post",
-    //         data: {newDoctor: this.state.newDoctor}
-    //     })
-        
-    // }
-    createDoctor = e => {
-        e.preventDefault();
-        axios({
-          url: `${doctorUrl}/doctors`,
-          method: "post",
-          data: { doctor: this.state.doctors }
-        }).then(response => {
-          this.setState(prevState => ({
-             doctors: response.data.doctors
-          }));
-        });
+    creatDoctor = e => {
+      e.preventDefault();
+      axios({
+        url: `${doctorUrl}/doctors`,
+        method: "post",
+        data: { newDoctor: this.state.newDoctor }
+      }).then(response => {
+        //   this.setState(prevState => ({
+        //     doctors: [...prevState.doctors, response.data.doctors]
+        //   }));
+        this.setState({ doctors: response.data.doctors });
+      });
+    };
+    handleChange = e => {
+      let newDoctor = {
+        [e.target.name]: e.target.value,
+        [e.target.age]: e.target.value,
+        [e.target.gender]: e.target.value
       };
-      deleteDoctor = e => {
-        axios({
-          url: `${doctorUrl}/doctors/${e.target.id}`,
-          method: "delete"
-        }).then(response => {
-          this.setState({ doctors: response.data.doctors });
-        });
-      };
+      this.setState((prevState, currentState) => ({
+        newPatient: { ...prevState.newDoctor, ...newDoctor }
+      }));
+    };
+    deleteDoctor = e => {
+      axios({
+        url: `${doctorUrl}/doctors/${e.target.id}`,
+        method: "delete"
+      }).then(response => {
+        this.setState({ doctors: response.data.doctors });
+      });
+    };
       render() {
         console.log(this.state);
         const doctorEls = this.state.doctors.map(doctor => {
           return (
               
-                  <div key={doctor.id} className="doctorsCArdDiv">
+                  <div key={doctor.id} className="doctorsCardDiv">
                       {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB-ckJyRnhYpswKfyGR1aLAPiLFx3eh5yUk_P1fh7dpeZ8SHBW&s" /> */}
                       <p>Dr.{doctor.name}</p>
                       <p>Address: {doctor.address}</p>
                       <p>Phone: {doctor.phone}</p>
                       <p>Id: {doctor.id}</p>
-                      <button><i class="material-icons md-dark">edit</i></button>
-                      <button onClick={this.deleteDoctor}><i class="material-icons md-dark">delete</i></button>
+                      <i class="material-icons md-dark" onClick={this.deleteDoctor}>delete</i>
                   </div>
              
           );
         });
         return(
-            <div id="doctorssDiv">
+            <div id="doctorsDiv"> 
+              <i class="material-icons md-dark" id="addButton">add_circle</i>
                <ul>{doctorEls}</ul>
             </div>
         )

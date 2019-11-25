@@ -4,17 +4,16 @@
 /* ID styles */
 
 #appointmentFormTag{
-    margin: 0 auto;
+    border: solid white 1px;
+    border-radius: 10px;
+    width: 700px;
+    height: 550px;
+    padding: 20px;
+    background-color: white;;
     display: flex;
-    align-self: center;
-    justify-self: center;
     flex-direction: column;
-    border: solid white 2px;
-    border-radius: 5px;
-    /* height: 900px; */
-    width: 800px;
-    background-color: #CC4C4C;
-    color: white;
+    justify-self: center;
+    align-self: center;
 }
 
 #formHeader{

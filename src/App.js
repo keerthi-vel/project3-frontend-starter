@@ -2,7 +2,14 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import Navagation from './Navagation';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
 import Form from './Form'
+import Patients from './Patients'
 import Doctors from './Doctors';
 import Schedule from './Schedule';
 import Appointments from './Appointments';
@@ -36,19 +43,32 @@ class App extends React.Component {
     console.log(this.state.users)
     console.log("Rendered")
     return (
-      <div className="App" >
-        <header>
-            <Header/>
-        </header>
-        <main>
-          <aside>
-            <Navagation />
-          </aside>
-        </main>
-        <footer>
-
-        </footer>
-      </div>
+      <Router>       
+        <body>
+            <header className="App">
+                <h1>Medical app</h1>
+            </header>
+            <main>
+              <aside>
+                <navigation>
+                  <Navagation/>
+                </navigation>
+              </aside>
+              <div id="mainContentWrapper">
+                    <div>
+                        <Route exact path="/" component={() => <Home/>}/>
+                        <Route path="/doctors" component={() => < Doctors/> }/>
+                        <Route path="/patients" component={() => < Patients/> }/>
+                        <Route path="/schedule" component={() => < Schedule/> }/>
+                        <Route path="/appointments" component={() => < Appointments/> }/>
+                    </div>
+              </div>
+            </main>
+            <footer>
+              <h1>FOOTER</h1>
+            </footer>
+          </body>
+        </Router> 
     );
   }
 }

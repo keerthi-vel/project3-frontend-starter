@@ -1,43 +1,8 @@
-/* Universal styles */
-*{}
-
-/* ID styles */
-#doctorssDiv{
-    display: flex;
-    flex-direction: row;
-    border: solid black 2px;
-    width: 600px;
-
-}
-
-#doctorssDiv ul{
-    display: flex;
-    flex-direction: row;
-    /* flex-wrap: wrap; */
-    border: solid black 2px;
-    /* width: 900px;
-    height: 700px; */
-}
-
-/* Class styles */
-.doctorsCArdDiv{
-    border: solid white 2px;
-    border-radius: 10px;
-    background-color: #C1C1C1;
+.doctorsCardDiv{
+    background-color: #CC4C4C;
     color: white;
-    height: 450px;
-    width: 280px;
-}
-
-.doctorsCArdDiv button{
-    background-color: firebrick;
     border: solid white 1px;
     border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
 }
-
-
-/* Tag styles */
-
-
-
-
