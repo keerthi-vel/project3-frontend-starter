@@ -81,7 +81,7 @@ class Patients extends React.Component {
         });
         return(
             <div id="patientDiv">
-               <i class="material-icons md-dark" id="addButton">add_circle</i>
+              <i class="material-icons md-dark" id="addButton">add_circle</i>
               <ul>{patientEls}</ul> 
             </div>
         )

@@ -80,9 +80,27 @@ class Doctors extends React.Component{
           );
         });
         return(
-            <div id="doctorsDiv"> 
+            <div id="doctorsDiv">
+              {/* This is the form that adds a doctor  */}
+              {/* <div id="doctorFormModal">
+              <form
+              onSubmit={this.createPatient}
+              onChange={e => this.handleChange(e)}
+              >
+              Name: <input type="text" name="name" />
+              Age: <input type="number" name="age" />
+              {/* Gender: <input type="text" name="gender" /> */}
+              {/* Gender:
+              <select id="genderDropdown" name="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+              </select>
+              <input type="submit" value="Add New Patient" />
+              </form> */}
+              {/* </div>  */}
               <i class="material-icons md-dark" id="addButton">add_circle</i>
-               <ul>{doctorEls}</ul>
+              <ul>{doctorEls}</ul>
             </div>
         )
     }

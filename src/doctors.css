@@ -6,3 +6,20 @@
     padding: 20px;
     margin: 20px;
 }
+
+#doctorFormModal{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 10px;
+    height: 400px;
+    width: 600px;
+}
+
+#doctorFormModal input {
+    width: 400px;
+    margin-right: 20px;
+
+}

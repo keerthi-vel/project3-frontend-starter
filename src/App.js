@@ -18,6 +18,8 @@ import Header from './Header';
 // const databaseUrl = process.env.HEROKU_DB_URL || 'http://localhost:3000'
 const databaseUrl = 'https://project3-backend-test.herokuapp.com'
 
+
+
 class App extends React.Component {
   state = {
     users: []
@@ -61,6 +63,7 @@ class App extends React.Component {
                         <Route path="/patients" component={() => < Patients/> }/>
                         <Route path="/schedule" component={() => < Schedule/> }/>
                         <Route path="/appointments" component={() => < Appointments/> }/>
+                        <Route path="/doctorModal" component={() => < Appointments/> }/>
                     </div>
               </div>
             </main>
