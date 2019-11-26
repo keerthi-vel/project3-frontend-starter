@@ -9,96 +9,125 @@ class Doctors extends React.Component{
         doctors: [],
         newDoctor: {
             name: "",
-            address: "",
-            phone: null,
+            age: null,
+            gender: "",
             doctorId: null
         }
     }
-    componentDidMount(){
-        this.getDoctors();
+    componentDidMount() {
+      this.getDoctors();
     }
     getDoctors = () => {
-        axios({
+      axios({
         url: `${doctorUrl}/doctors`,
-        method: 'get'
-        })
-        .then( response => {
-            console.log(response);
-
-            console.log("Doctors array:",response.data.doctors);
-            var doctorsList = response.data.doctors;
-
-            console.log("Address:",response.data.doctors[1].address);
-            var doctorAddress = response.data.doctors[1].address;
-
-            console.log("Doctor Id:", response.data.doctors[1].doctorId);
-            var doctorID = response.data.doctors[1].doctorId;
-
-            console.log("Name:", response.data.doctors[1].name);
-            var doctorName = response.data.doctors[1].name;
-
-            console.log("Phone", response.data.doctors[1].phone);
-            var doctorPhone = response.data.doctors[1].phone;
-
-            this.setState({
-                doctors: response.data.doctors
-            });
-        })
-        .catch((error)=> {
-              console.log('Error', error.message);
+        method: "get"
+      }).then(response => {
+        this.setState({
+          doctors: response.data.doctors
         });
+        console.log(response);
+      });
     };
-    // createDoctor = e => {
-    //     e.preventDefault();
-    //     axios({
-    //         url: `${doctorUrl}/doctors/${e.target.id}`,
-    //         method: "post",
-    //         data: {newDoctor: this.state.newDoctor}
-    //     })
-        
-    // }
-    createDoctor = e => {
-        e.preventDefault();
-        axios({
-          url: `${doctorUrl}/doctors`,
-          method: "post",
-          data: { newDoctor: this.state.newDoctor }
-        }).then(response => {
-          this.setState(prevState => ({
-            doctors: [...prevState.doctors, response.data.doctor]
-          }));
-        });
+    creatDoctor = e => {
+      e.preventDefault();
+      axios({
+        url: `${doctorUrl}/doctors`,
+        method: "post",
+        data: { newDoctor: this.state.newDoctor }
+      }).then(response => {
+        //   this.setState(prevState => ({
+        //     doctors: [...prevState.doctors, response.data.doctors]
+        //   }));
+        this.setState({ doctors: response.data.doctors });
+      });
+    };
+    handleChange = e => {
+      let newDoctor = {
+        [e.target.name]: e.target.value,
+        [e.target.age]: e.target.value,
+        [e.target.gender]: e.target.value
       };
-      deleteDoctor = e => {
-        axios({
-          url: `${doctorUrl}/doctors/${e.target.id}`,
-          method: "delete"
-        }).then(response => {
-          this.setState({ doctors: response.data.doctors });
-        });
-      };
+      this.setState((prevState, currentState) => ({
+        newPatient: { ...prevState.newDoctor, ...newDoctor }
+      }));
+    };
+    deleteDoctor = e => {
+      axios({
+        url: `${doctorUrl}/doctors/${e.target.id}`,
+        method: "delete"
+      }).then(response => {
+        this.setState({ doctors: response.data.doctors });
+      });
+    };
       render() {
         console.log(this.state);
         const doctorEls = this.state.doctors.map(doctor => {
           return (
-              <div className="doctorsCArdDiv">
-                    <li key={doctor.id}>
-                    {doctor.name} -- {doctor.age} -- {doctor.gender} -- {doctor.doctorId}
-                    <button id={doctor.id} onClick={this.deletedoctor}>
-                        Delete doctor
-                    </button>
-                    <button id={doctor.id} onClick={this.createdoctor}>
-                        Create doctor
-                    </button>
-                    </li>
-              </div>
+              
+                  <div key={doctor.id} className="doctorsCardDiv">
+                      {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB-ckJyRnhYpswKfyGR1aLAPiLFx3eh5yUk_P1fh7dpeZ8SHBW&s" /> */}
+                      <p>Dr.{doctor.name}</p>
+                      <p>Address: {doctor.address}</p>
+                      <p>Phone: {doctor.phone}</p>
+                      <p>Id: {doctor.id}</p>
+                      <i class="material-icons md-dark" onClick={this.deleteDoctor}>delete</i>
+                  </div>
+             
           );
         });
         return(
-            <div id="doctorssDiv">
-               <ul>{doctorEls}</ul>
+            <div id="doctorsDiv">
+              {/* This is the form that adds a doctor  */}
+              {/* <div id="doctorFormModal">
+              <form
+              onSubmit={this.createPatient}
+              onChange={e => this.handleChange(e)}
+              >
+              Name: <input type="text" name="name" />
+              Age: <input type="number" name="age" />
+              {/* Gender: <input type="text" name="gender" /> */}
+              {/* Gender:
+              <select id="genderDropdown" name="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+              </select>
+              <input type="submit" value="Add New Patient" />
+              </form> */}
+              {/* </div>  */}
+              <i class="material-icons md-dark" id="addButton">add_circle</i>
+              <ul>{doctorEls}</ul>
             </div>
         )
     }
 }
+
+
+
+
 export default Doctors;
+
+
+// const doctors = this.props."doctors go here".map((word) => {
+//     return <h1 className="doctorsListDiv">{word}</h1>
+//    })
+    
+//     return(
+//         <div>
+//             {/* <input type="text"/>
+//             <button>Search</button> */}
+//             <div id="doctorsDiv" >
+//                {doctors}
+//             </div>
+//         </div>
+
+
+
+
+
+{/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB-ckJyRnhYpswKfyGR1aLAPiLFx3eh5yUk_P1fh7dpeZ8SHBW&s" />
+               <h3>Dr.Meridith Grey</h3>
+               <h5>Oncology</h5>
+               <p>
+               Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.
+               </p> */}

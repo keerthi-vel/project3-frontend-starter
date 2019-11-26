@@ -1,31 +1,25 @@
-/* Universal styles */
-*{}
-
-/* ID styles */
-#doctorssDiv{
-    display: flex;
-    
-    border: solid black 2px;
-    width: 900px;
-    height: 700px;
+.doctorsCardDiv{
+    background-color: #CC4C4C;
+    color: white;
+    border: solid white 1px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
 }
 
-#doctorssDiv ul{
+#doctorFormModal{
     display: flex;
     flex-direction: column;
-    border: solid black 2px;
-    width: 900px;
-    height: 700px;
-}
-
-/* Class styles */
-.doctorsCArdDiv{
+    flex-wrap: wrap;
+    background-color: white;
     border: solid black 1px;
+    border-radius: 10px;
+    height: 400px;
+    width: 600px;
 }
 
+#doctorFormModal input {
+    width: 400px;
+    margin-right: 20px;
 
-/* Tag styles */
-
-
-
-
+}

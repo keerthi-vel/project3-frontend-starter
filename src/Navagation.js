@@ -23,73 +23,74 @@ class Navagation extends React.Component{
     render(){
         const time =  moment().format('LT'); 
         return(
-        <Router>
-            <div id="headerDiv">
-                <p>Medical app</p>
-                <p>{time}</p>
-            </div>
-            <div id="navagationDiv">
-                <ul id="navagationUl">
-                    <div className="navagationLinkDiv">
-                        <li className="navagationLis">
-                            <Link to="/">
-                                <i class="material-icons">home</i>
-                            
-                                <p>Home</p>
-                            </Link>
-                        </li>
-                    </div>
-                    
-                    <div className="navagationLinkDiv">
-                    <li className="navagationLis">
-                        <Link to="/doctors">
-                            <i class="material-icons">account_circle</i>
-                        
-                            <p>Doctors</p>
+        // <Router>
+            
+            <div id="bodyDiv">
+                    {/* <div id="headerDiv">
+                        <p>Medical app</p>
+                        <p>{time}</p>
+                    </div> */}
+                    <div id="navagationDiv">
+                    <ul id="navagationUl">
+                    <Link to="/">
+                        <div className="navagationLinkDiv">
+                            <li className="navagationLis">
+                                
+                                    <i class="material-icons">home</i>
+                                
+                                    <p>Home</p>
+                                
+                            </li>
+                        </div>
                         </Link>
-                    </li>
-                    </div>
-                    
-                    <div className="navagationLinkDiv">
+                        
+                        <Link to="/doctors">
+
+                        <div className="navagationLinkDiv">
                         <li className="navagationLis">
-                            <Link to="/patients">
-                            <i class="material-icons">assignment_ind</i>
+                                <i class="material-icons">account_circle</i>
                             
-                            <p>Patients</p>
-                            </Link>
+                                <p>Doctors</p>
                         </li>
-                    </div>
+                        </div>
+                        </Link>
+
+                        <Link to="/patients">
+                        <div className="navagationLinkDiv">
+                            <li className="navagationLis">
+                                
+                                <i class="material-icons">assignment_ind</i>
+                                
+                                <p>Patients</p>
+                            </li>
+                        </div>
+                        </Link>
+
+                        <Link to="/schedule">
+                        <div className="navagationLinkDiv">
+                            <li className="navagationLis">
+                                <i class="material-icons">calendar_today</i>
+                                
+                                    <p>Shedule an apointment</p>
+                            </li>
+                        </div>
+                        </Link>
+
+                        <Link to="/appointments">
+                        <div className="navagationLinkDiv">
+                            <li className="navagationLis">
+                                    <i class="material-icons">event</i>
+                                
+                                    <p>Appointments</p>
+                            </li>
+                        </div>
+                        </Link>
+
+                    </ul>
                     
-                    <div className="navagationLinkDiv">
-                        <li className="navagationLis">
-                            <Link to="/schedule">
-                            <i class="material-icons">calendar_today</i>
-                            
-                                <p>Shedule</p>
-                            </Link>
-                        </li>
-                    </div>
-                    
-                    <div className="navagationLinkDiv">
-                        <li className="navagationLis">
-                            <Link to="/appointments">
-                                <i class="material-icons">event</i>
-                            
-                                <p>Appointments</p>
-                            </Link>
-                        </li>
-                    </div>
-                    
-                </ul>
-                <div>
-                    <Route exact path="/" component={() => <Home/>}/>
-                    <Route path="/doctors" component={() => < Doctors/> }/>
-                    <Route path="/patients" component={() => < Patients/> }/>
-                    <Route path="/schedule" component={() => < Schedule/> }/>
-                    <Route path="/appointments" component={() => < Appointments/> }/>
                 </div>
             </div>   
-        </Router>
+        // </Router>
         )
     }
 }

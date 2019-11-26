@@ -1,63 +1,55 @@
-/* .App {
-  display: flex;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  /* border: solid red 2px; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: #888888;
+  font-family: 'Oswald', sans-serif;
+}
+
+header{
+  width: 100%;
+  /* border: solid purple 2px; */
+  background-color: #C1C1C1;
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+  /* border: solid yellow 1px; */
+  height: 710px;
+}
+
+
+aside{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  border-top: solid white 5px;
+  /* border: solid orange 2px; */
+  background-color: #CC4C4C;
+}
+
+footer{
+  width: 100%;
+  /* border: solid green 2px; */
+  background-color: white;
+}
+
+#mainContentWrapper{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
 }
 
-.App-link {
-  color: #09d3ac;
-}
-
-#navagationUl{
-  height: 700px;
-  border: solid black 2px;
+#mainContentWrapper ul{
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  list-style-type: none;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* justify-content: space-between; */
 }
 
-#appointmentFormTag{
-  border: solid black 2px;
-  display: flex;
-  flex-direction: column;
-}
-
-fieldset{
-  display: flex;
-}
-
-#DoctorsDiv{
-  display: flex;
-  flex-direction: column;
-  border: solid black 1px;
-  width: 300px;
-}  */
-.patientsCardDiv
-{
-  margin-left: 350px;
-  border: 1px solid red;
-
-}
-.patientContainer
-{
-  display: flex;
-  width: 60%;
-  margin: 0 auto;
-  justify-content: space-evenly;
-  border: 1px solid green;
-
+#addButton{
+  margin: 20px;
 }

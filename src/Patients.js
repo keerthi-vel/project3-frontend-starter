@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-//import './patient.css'
+import './patient.css'
 // import './App.css';
 const patientUrl = "http://localhost:3000/api";
 class Patients extends React.Component {
@@ -61,15 +61,13 @@ class Patients extends React.Component {
         console.log(this.state);
         const patientEls = this.state.patients.map(patient => {
           return (
-            
-            <div key={patient.id}  className="patientsCardDiv">
+            <div key={patient.id} className="patientsCardDiv">
                 <p>Name: {patient.name}</p>
                 <p>Age: {patient.age}</p>
                 <p>Gender: {patient.gender}</p>
                 <p>ID: {patient.id}</p>
                 <i class="material-icons md-dark" id={patient.id} onClick={this.deletePatient}>delete</i>
             </div>
-            
             // <li key={patient.id}>
             //   {patient.name} -- {patient.age} -- {patient.gender} -- {patient.patientId}
             //   <button id={patient.id} onClick={this.deletePatient}>
@@ -82,8 +80,8 @@ class Patients extends React.Component {
           );
         });
         return(
-            <div className="patientContainer">
-               <i class="material-icons md-dark" id="addButton">add_circle</i>
+            <div id="patientDiv">
+              <i class="material-icons md-dark" id="addButton">add_circle</i>
               <ul>{patientEls}</ul> 
             </div>
         )

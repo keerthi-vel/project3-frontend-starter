@@ -1,10 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import './appointments.css';
 import './App.css';
-
 const appointmentUrl = 'http://localhost:3000/api';
-
-
 class Appointments extends React.Component{
     state = {
         appointments: [],
@@ -15,7 +13,6 @@ class Appointments extends React.Component{
             doctorId: null
         }
     }
-
     componentDidMount(){
         this.getAppointments();
     }
@@ -55,26 +52,37 @@ class Appointments extends React.Component{
     };
     render() {
     // console.log(this.state.appointments);
-    
-    
     const appointmentEls = this.state.appointments.map(appointment => {
       return(
-        <li key={appointment.id}>
-          {appointment.time} --{appointment.date} --{appointment.patientId} --{appointment.doctorId}
-          <button id={appointment.id} onClick={this.deleteAppointment}>
-            Delete Appointment
-          </button>
-          {/* <button id={appointment.id} onClick={this.createAppointment}>
-            Create Appointment
-          </button> */}
-        </li>
+        <div id="appointmentDiv">
+            <p>1/11/21</p>
+            <p>8:45 A.M</p>
+            <p>Dr.Murphy</p>
+            <p>George Mandrith</p>
+        </div>
       );
     });
     return(
-        <div id="AppointmentDiv">
-            <button>createAppointment</button>
-            <ul>{appointmentEls}</ul>
+        <div id="appointmentDiv">
+            <p>1/11/21</p>
+            <p>8:45 A.M</p>
+            <p>Dr.Murphy</p>
+            <p>George Mandrith</p>
+            <button><i class="material-icons md-dark">edit</i></button>
+                      <button onClick={this.deleteDoctor}><i class="material-icons md-dark">delete</i></button>
+            {/* <ul>{appointmentEls}</ul> */}
         </div>
     )}
 }
 export default Appointments;
+
+
+// <li key={appointment.id}>
+        //   {appointment.time} --{appointment.date} --{appointment.patientId} --{appointment.doctorId}
+        //   <button id={appointment.id} onClick={this.deleteAppointment}>
+        //     Delete Appointment
+        //   </button>
+        //   {/* <button id={appointment.id} onClick={this.createAppointment}>
+        //     Create Appointment
+        //   </button> */}
+        // </li>

@@ -4,19 +4,51 @@
 /* ID styles */
 
 #appointmentFormTag{
-    margin: 0 auto;
+    border: solid white 1px;
+    border-radius: 10px;
+    width: 700px;
+    height: 550px;
+    padding: 20px;
+    background-color: white;;
     display: flex;
-    align-self: center;
-    justify-self: center;
     flex-direction: column;
-    border: solid yellow 4px;
-    height: 700px;
-    width: 600px;
-    background-color: #CC4C4C;
-    color: white;
+    justify-self: center;
+    align-self: center;
 }
 
-/* Class styles */
+#formHeader{
+    font-size: 40px;
+}
 
+/* #testRow{
+    display: flex;
+    flex-direction: row;
+}
+
+#testRow input{
+    margin-right: 80px;
+} */
+
+/* Class styles */
+.stepsSpan{
+    background-color: white;
+    color: #CC4C4C;
+    border: solid white 1px;
+    /* height: 90px;
+    width: 90px; */
+}
+
+.stepsPTag{
+    font-size: 25px;
+}
 
 /* Tag styles */
+fieldset{
+    display: flex;
+    flex-wrap: wrap;
+    border: solid white 1px;
+}
+
+body{
+    display: flex;
+}

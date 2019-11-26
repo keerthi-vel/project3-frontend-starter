@@ -2,13 +2,23 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import Navagation from './Navagation';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
 import Form from './Form'
+import Patients from './Patients'
 import Doctors from './Doctors';
 import Schedule from './Schedule';
 import Appointments from './Appointments';
-import Home from './Home'
+import Home from './Home';
+import Header from './Header';
 // const databaseUrl = process.env.HEROKU_DB_URL || 'http://localhost:3000'
 const databaseUrl = 'https://project3-backend-test.herokuapp.com'
+
+
 
 class App extends React.Component {
   state = {
@@ -35,9 +45,33 @@ class App extends React.Component {
     console.log(this.state.users)
     console.log("Rendered")
     return (
-      <div className="App" >
-        <Navagation />
-      </div>
+      <Router>       
+        <body>
+            <header className="App">
+                <h1>Medical app</h1>
+            </header>
+            <main>
+              <aside>
+                <navigation>
+                  <Navagation/>
+                </navigation>
+              </aside>
+              <div id="mainContentWrapper">
+                    <div>
+                        <Route exact path="/" component={() => <Home/>}/>
+                        <Route path="/doctors" component={() => < Doctors/> }/>
+                        <Route path="/patients" component={() => < Patients/> }/>
+                        <Route path="/schedule" component={() => < Schedule/> }/>
+                        <Route path="/appointments" component={() => < Appointments/> }/>
+                        <Route path="/doctorModal" component={() => < Appointments/> }/>
+                    </div>
+              </div>
+            </main>
+            <footer>
+              <h1>FOOTER</h1>
+            </footer>
+          </body>
+        </Router> 
     );
   }
 }
