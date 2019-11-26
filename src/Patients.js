@@ -67,6 +67,9 @@ class Patients extends React.Component {
                 <p>Gender: {patient.gender}</p>
                 <p>ID: {patient.id}</p>
                 <i class="material-icons md-dark" id={patient.id} onClick={this.deletePatient}>delete</i>
+                {/* <button id={patient.id} onClick={this.createPatient}>
+               Create Patient
+              </button> */}
             </div>
             // <li key={patient.id}>
             //   {patient.name} -- {patient.age} -- {patient.gender} -- {patient.patientId}
@@ -81,7 +84,14 @@ class Patients extends React.Component {
         });
         return(
             <div id="patientDiv">
-              <i class="material-icons md-dark" id="addButton">add_circle</i>
+              <h1>Create Patient</h1>
+                    <form onSubmit={this.createPatient} onChange={e => this.handleChange(e)}>
+                      Name: <input type="text" name="name" />
+                      Gender: <input type="text" name="gender" />
+                      Age: <input type="number" name="age" />
+                      <input type="submit" value="New patient Submit" />
+                    </form>
+              {/* <i class="material-icons md-dark" id="addButton">add_circle</i> */}
               <ul>{patientEls}</ul> 
             </div>
         )

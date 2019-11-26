@@ -22,7 +22,8 @@ const databaseUrl = 'https://project3-backend-test.herokuapp.com'
 
 class App extends React.Component {
   state = {
-    users: []
+    users: [],
+    appointmentToUpdate: {}
   }
 
   componentDidMount() {
@@ -62,6 +63,7 @@ class App extends React.Component {
                         <Route path="/doctors" component={() => < Doctors/> }/>
                         <Route path="/patients" component={() => < Patients/> }/>
                         <Route path="/schedule" component={() => < Schedule/> }/>
+                        <Route path="/schedule/:id/edit" component={() => < Schedule/> }/>
                         <Route path="/appointments" component={() => < Appointments/> }/>
                         <Route path="/doctorModal" component={() => < Appointments/> }/>
                     </div>
