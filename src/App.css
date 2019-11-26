@@ -45,4 +45,19 @@ fieldset{
   flex-direction: column;
   border: solid black 1px;
   width: 300px;
-} */
+}  */
+.patientsCardDiv
+{
+  margin-left: 350px;
+  border: 1px solid red;
+
+}
+.patientContainer
+{
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  border: 1px solid green;
+
+}
