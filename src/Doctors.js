@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 // import './App.css';
 import './doctors.css';
-const doctorUrl = 'http://localhost:3000/api';
+const doctorUrl = 'https://scheduler-api-backend.herokuapp.com';
 class Doctors extends React.Component{
     state = {
         doctors: [],

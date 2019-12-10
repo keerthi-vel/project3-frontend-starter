@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './appointments.css';
 import './App.css';
-const appointmentUrl = 'http://localhost:3000/api';
+import Patients from './Patients';
+const appointmentUrl = 'https://scheduler-api-backend.herokuapp.com';
 class Appointments extends React.Component{
     state = {
         appointments: [],
@@ -56,28 +57,12 @@ class Appointments extends React.Component{
                   <p>Date: {appointment.date}</p>
                   <p>doctorId: {appointment.doctorId}</p>
                   <p>patientId: {appointment.patientId}</p>
-                  <a href={`/schedule/${appointment.id}/edit`}>Update</a>
                   <i class="material-icons md-dark" id={appointment.id} onClick={this.deleteAppointment}>delete</i>
-                  <div>
-                    <form onChange={e => this.handleChange(e)} onSubmit={e => this.handleSubmit(e)}>
-                    <label>Patient Id:</label>
-                    <input value={appointment.patientId}/>
-                    {/* <input type="text" name='patientId'/> */}
-                    <input type='submit'/>
-                    </form>
-
-                  </div>
-              </div>
+               </div>
             );
           });
     return(
-        <div>
-            {/* <p>1/11/21</p>
-            <p>8:45 A.M</p>
-            <p>Dr.Murphy</p>
-            <p>George Mandrith</p>
-            <button><i class="material-icons md-dark">edit</i></button>
-                      <button onClick={this.deleteDoctor}><i class="material-icons md-dark">delete</i></button> */}
+        <div id="appointmentDiv">
             <ul>{appointmentEls}</ul>
         </div>
     )}

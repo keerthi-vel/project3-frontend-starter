@@ -16,14 +16,15 @@ import Appointments from './Appointments';
 import Home from './Home';
 import Header from './Header';
 // const databaseUrl = process.env.HEROKU_DB_URL || 'http://localhost:3000'
-const databaseUrl = 'https://project3-backend-test.herokuapp.com'
-
+//const databaseUrl = 'https://project3-backend-test.herokuapp.com'
+const herokuBackendUrl = 'https://scheduler-api-backend.herokuapp.com'
+const databaseUrl = process.env.NODE_ENV === 'production' ? herokuBackendUrl : 'http://localhost:3000'
 
 
 class App extends React.Component {
   state = {
     users: [],
-    appointmentToUpdate: {}
+    //appointmentToUpdate: {}
   }
 
   componentDidMount() {
@@ -48,9 +49,6 @@ class App extends React.Component {
     return (
       <Router>       
         <body>
-            <header className="App">
-                <h1>Medical app</h1>
-            </header>
             <main>
               <aside>
                 <navigation>
@@ -63,15 +61,11 @@ class App extends React.Component {
                         <Route path="/doctors" component={() => < Doctors/> }/>
                         <Route path="/patients" component={() => < Patients/> }/>
                         <Route path="/schedule" component={() => < Schedule/> }/>
-                        <Route path="/schedule/:id/edit" component={() => < Schedule/> }/>
                         <Route path="/appointments" component={() => < Appointments/> }/>
                         <Route path="/doctorModal" component={() => < Appointments/> }/>
                     </div>
               </div>
             </main>
-            <footer>
-              <h1>FOOTER</h1>
-            </footer>
           </body>
         </Router> 
     );

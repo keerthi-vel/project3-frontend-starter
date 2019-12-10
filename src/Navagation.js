@@ -19,6 +19,8 @@ import {
   const doctorUrl = 'http://localhost:3000/api';
 
 
+
+
 class Navagation extends React.Component{
     render(){
         const time =  moment().format('LT'); 
@@ -32,18 +34,7 @@ class Navagation extends React.Component{
                     </div> */}
                     <div id="navagationDiv">
                     <ul id="navagationUl">
-                    <Link to="/">
-                        <div className="navagationLinkDiv">
-                            <li className="navagationLis">
-                                
-                                    <i class="material-icons">home</i>
-                                
-                                    <p>Home</p>
-                                
-                            </li>
-                        </div>
-                        </Link>
-                        
+                    
                         <Link to="/doctors">
 
                         <div className="navagationLinkDiv">
@@ -71,7 +62,7 @@ class Navagation extends React.Component{
                             <li className="navagationLis">
                                 <i class="material-icons">calendar_today</i>
                                 
-                                    <p>Shedule an apointment</p>
+                                    <p>Create Appointment</p>
                             </li>
                         </div>
                         </Link>
@@ -94,9 +85,5 @@ class Navagation extends React.Component{
         )
     }
 }
-
-
-
-
 export default Navagation;
 
